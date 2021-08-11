@@ -1,9 +1,6 @@
 class CannonBall {
   constructor(x, y) {
     var options = {
-      restitution: 0.8,
-      friction: 1.0,
-      density: 1.0,
       isStatic: true
     };
     this.r = 30;
@@ -26,10 +23,8 @@ class CannonBall {
     var pos = this.body.position;
 
     push();
-    translate(pos.x, pos.y);
-    rotate(angle);
     imageMode(CENTER);
-    image(this.image, 0, 0, this.r, this.r);
+    image(this.image, pos.x, pos.y, this.r, this.r);
     pop();
 
     if (this.body.velocity.x > 0 && pos.x > 10) {
